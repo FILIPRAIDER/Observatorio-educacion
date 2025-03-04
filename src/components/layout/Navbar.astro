@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+
+// src/components/layout/Navbar.astro
+import logo from "../../assets/logo.svg";
+---
+
+<header class="bg-transparent p-2 px-4">
+  <div class="w-full px-4 py-2 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <Image
+        src={logo}
+        alt="Observatorio de la educación"
+        class="h-[45px] w-auto"
+      />
+    </div>
+    <nav class="mx-auto font-poppins">
+      <ul class="flex gap-6 text-[14px] font-semibold text-black">
+        <li>
+          <a href="/" class="text-gray-600 hover:text-[#0E667C]"
+            >Sobre Nosotros</a
+          >
+        </li>
+        <li>
+          <a href="/comites-unidos" class="text-gray-600 hover:text-[#0E667C]"
+            >Cordobá en datos</a
+          >
+        </li>
+        <li>
+          <a href="/investigaciones" class="text-gray-600 hover:text-[#0E667C]"
+            >Investigaciones</a
+          >
+        </li>
+        <li>
+          <a href="/publicaciones" class="text-gray-600 hover:text-[#0E667C]"
+            >Publicaciones</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <a
+      href="/contacto"
+      class="flex items-center justify-center gap-2 border-2 border-[#0E667C] text-[#0E667C] font-bold px-4 py-2 rounded-lg hover:bg-[#0E667C] hover:text-white transition"
+    >
+      <span>Contacto</span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-5 h-5 font-bold"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5l6 6m0 0l-6 6m6-6H4.5"></path>
+      </svg>
+    </a>
+  </div>
+</header>

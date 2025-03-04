@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  titulo: string;
+  fecha: string;
+  descripcion: string;
+  tipoPublicacion?: string;
+  imagen?: string;
+  slug: string;
+}
+
+const {
+  titulo,
+  fecha,
+  descripcion,
+  tipoPublicacion,
+  imagen = "/placeholder-publicacion.jpg",
+  slug,
+} = Astro.props;
+
+const fechaFormateada = new Date(fecha).toLocaleDateString("es-ES", {
+  day: "numeric",
+  month: "long",
+});
+---
+
+<article
+  class="backdrop-blur-lg backdrop-saturate-200 rounded-[8px] bg-[#828282]/10 p-6 flex gap-4 items-center relative pl-56 h-[210px] font-inter"
+>
+  <!-- Imagen con transición -->
+  <div
+    class="flex-shrink-0 rounded-[8px] absolute -left-10"
+    astro-transition:fade
+  >
+    <Image
+      width={240}
+      height={152}
+      src={imagen}
+      alt={`Imagen para ${titulo}`}
+      class="object-cover bg-gray-200 rounded-[8px] transition-opacity duration-500 ease-in-out opacity-0"
+      onload="this.style.opacity=1;"
+    />
+  </div>
+
+  <!-- Contenido -->
+  <div class="flex-1 space-y-2">
+    <div class="flex justify-between items-start">
+      <a href={`/publicaciones/${slug}`} astro-transition:fade>
+        <h3
+          class="text-lg font-semibold text-gray-900 w-[380px] hover:underline line-clamp-2"
+        >
+          {titulo}
+        </h3>
+      </a>
+      <span class="text-sm text-gray-600">{fechaFormateada}</span>
+    </div>
+
+    {
+      tipoPublicacion && (
+        <span class="p-2 text-xs bg-blue-200 text-slate-800 px-2 py-1 rounded">
+          {tipoPublicacion}
+        </span>
+      )
+    }
+
+    <p class="text-gray-700 text-sm line-clamp-3">{descripcion}</p>
+  </div>
+</article>

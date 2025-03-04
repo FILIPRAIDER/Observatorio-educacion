@@ -1,0 +1,98 @@
+---
+// src/pages/publicaciones/[slug].astro
+import Layout from "../../layouts/Layout.astro";
+import { publicaciones } from "../../data/publicaciones";
+import { Image } from "astro:assets";
+
+export function getStaticPaths() {
+  return publicaciones.map((publicacion) => ({
+    params: { slug: publicacion.slug },
+    props: { publicacion },
+  }));
+}
+
+const { publicacion } = Astro.props;
+
+// Formatear fecha (12 de diciembre de 2024)
+const fechaFormateada = new Date(publicacion.fecha).toLocaleDateString(
+  "es-ES",
+  {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }
+);
+---
+
+<Layout title={publicacion.titulo}>
+  <div
+    class="container mx-auto px-4 py-12 max-w-4xl flex flex-col gap-4 font-inter"
+  >
+    <a
+      href="/publicaciones"
+      class="text-slate-600 hover:underline mb-6 border border-gray-200 w-[fit-content] px-2 py-1 rounded text-sm"
+    >
+      ← Volver a publicaciones
+    </a>
+
+    <article class="overflow-hidden flex flex-col gap-4">
+      <h1
+        class="text-3xl mx-auto font-semibold text-center max-w-[40ch] mb-8"
+        transition:name={`publicacion-titulo-${publicacion.slug}`}
+      >
+        {publicacion.titulo}
+      </h1>
+      <div class="h-80 w-[85%] mx-auto rounded-[8px] overflow-hidden">
+        <Image
+          width={640}
+          height={360}
+          src={publicacion.imagen}
+          alt={publicacion.titulo}
+          class="w-full h-full object-cover border"
+          transition:name={`publicacion-image-${publicacion.slug}`}
+        />
+      </div>
+
+      <div class="p-8 max-w-[82ch] mx-auto rounded-[8px]">
+        <div class="mb-4">
+          {
+            publicacion.tipoPublicacion && (
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm"
+                transition:name={`publicacion-tipo-${publicacion.slug}`}
+              >
+                {publicacion.tipoPublicacion}
+              </span>
+            )
+          }
+        </div>
+
+        <p class="text-gray-600 mb-6">{fechaFormateada}</p>
+
+        <div class="prose max-w-none">
+          <p class="mb-4">{publicacion.descripcion}</p>
+
+          <!-- Aquí agregarías el contenido completo del artículo -->
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            facilisi. Sed euismod, nisl vel tincidunt luctus, nunc nisl aliquam
+            nisl, vel tincidunt nunc nisl vel nisl. Nulla facilisi. Sed euismod,
+            nisl vel tincidunt luctus, nunc nisl aliquam nisl, vel tincidunt
+            nunc nisl vel nisl.
+          </p>
+
+          <h2 class="text-xl font-bold mt-8 mb-4">
+            Subtítulo de la publicación
+          </h2>
+
+          <p class="mb-4">
+            Praesent eget dolor eget urna tincidunt ultricies. Donec euismod,
+            nisl vel tincidunt luctus, nunc nisl aliquam nisl, vel tincidunt
+            nunc nisl vel nisl. Nulla facilisi. Sed euismod, nisl vel tincidunt
+            luctus, nunc nisl aliquam nisl, vel tincidunt nunc nisl vel nisl.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>

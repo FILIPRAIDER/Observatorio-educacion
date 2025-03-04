@@ -1,0 +1,59 @@
+---
+// src/components/publicaciones/ListaPublicaciones.astro
+import CardPublicacion from "./CardPublicacion.astro";
+
+interface Props {
+  publicaciones: Array<{
+    titulo: string;
+    fecha: string;
+    descripcion: string;
+    tipoPublicacion?: string;
+    imagen?: string;
+    slug: string;
+  }>;
+}
+
+const { publicaciones } = Astro.props;
+---
+
+<section class="container mx-auto px-4 py-8 w-[65%]">
+  <div class="mb-6 flex justify-between items-center">
+    <div>
+      <!-- Podrías agregar aquí paginación si lo necesitas -->
+    </div>
+    <div class="flex gap-2 items-center">
+      <button class="border rounded px-3 py-1 text-sm flex items-center gap-1">
+        <span>Filtrar</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    {
+      publicaciones.map((publicacion) => (
+        <CardPublicacion
+          titulo={publicacion.titulo}
+          fecha={publicacion.fecha}
+          descripcion={publicacion.descripcion}
+          tipoPublicacion={publicacion.tipoPublicacion}
+          imagen={publicacion.imagen}
+          slug={publicacion.slug}
+        />
+      ))
+    }
+  </div>
+</section>

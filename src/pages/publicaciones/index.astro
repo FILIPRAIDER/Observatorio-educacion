@@ -1,0 +1,17 @@
+---
+// src/pages/publicaciones/index.astro
+import Layout from "../../layouts/Layout.astro";
+import ListaPublicaciones from "../../components/publicaciones/ListaPublicaciones.astro";
+import { publicaciones } from "../../data/publicaciones";
+---
+
+<Layout title="Publicaciones">
+  <div class="container mx-auto px-4 py-16 font-poppins flex flex-col gap-2">
+    <h1 class="text-5xl font-medium mb-2 text-center">Publicaciones</h1>
+    <p class="text-[#828282] text-center mb-10">
+      Descubre los últimos análisis y tendencias en el sector educativo.
+    </p>
+
+    <ListaPublicaciones publicaciones={publicaciones} />
+  </div>
+</Layout>

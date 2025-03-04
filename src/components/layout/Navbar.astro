@@ -2,14 +2,13 @@
 import { Image } from "astro:assets";
 
 // src/components/layout/Navbar.astro
-import logo from "/logo.svg";
 ---
 
 <header class="bg-transparent p-2 px-4">
   <div class="w-full px-4 py-2 flex justify-between items-center">
     <div class="flex items-center gap-2">
-      <Image
-        src={logo}
+      <img
+        src="/logo.svg"
         alt="Observatorio de la educación"
         class="h-[45px] w-auto"
       />

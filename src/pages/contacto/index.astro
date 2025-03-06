@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { MapBox } from "../../components/map/MapBox.jsx";
+const lat = 8.74798; // Latitud de Montería
+const lng = -75.88143; // Longitud de Montería
+const zoom = 15;
+---
+
+<Layout title="Contacto">
+  <section
+    class="min-h-screen flex flex-col items-center px-4 font-poppins mt-6"
+  >
+    <h2 class="text-5xl font-bold text-center pb-4">Contáctanos</h2>
+    <p class="text-gray-600 text-center text-sm mb-6">
+      Escríbenos para cualquier consulta o colaboración. ¡Estamos para ayudarte!
+    </p>
+
+    <form
+      action=""
+      class="flex flex-col sm:flex-row w-full max-w-4xl py-10 gap-4"
+    >
+      <!-- FORMULARIO -->
+      <div
+        class="border border-gray-300 rounded-lg sm:w-1/2 w-full p-4 bg-white h-[450px] flex flex-col justify-between"
+      >
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="nombre" class="block text-sm font-semibold text-black"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Kevin Jose"
+              required
+              class="w-full mt-1 p-2 border text-xs border-gray-300 rounded-lg bg-transparent text-gray-900"
+            />
+          </div>
+          <div>
+            <label for="apellido" class="block text-sm text-black font-semibold"
+              >Apellido</label
+            >
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              placeholder="Morelo Negrette"
+              required
+              class="w-full mt-1 p-2 border text-xs border-gray-300 rounded-lg bg-transparent text-gray-900"
+            />
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label for="email" class="block text-sm text-black font-semibold"
+            >Correo</label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="kmorelo89@gmail.com"
+            required
+            class="w-full mt-1 p-2 border text-xs border-gray-300 rounded-lg bg-transparent text-gray-900"
+          />
+        </div>
+
+        <div class="mt-4">
+          <label for="celular" class="block text-sm text-black font-semibold"
+            >Número Celular</label
+          >
+          <input
+            type="text"
+            name="celular"
+            id="celular"
+            placeholder="+57 3114079342"
+            required
+            class="w-full mt-1 p-2 border text-xs border-gray-300 rounded-lg bg-transparent text-gray-900"
+          />
+        </div>
+
+        <div class="mt-4">
+          <label for="mensaje" class="block text-sm text-black font-semibold"
+            >Mensaje</label
+          >
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            cols="30"
+            rows="3"
+            placeholder="Escribe aquí"
+            required
+            class="w-full mt-1 p-2 border text-xs border-gray-300 rounded-lg bg-transparent text-gray-900"
+          ></textarea>
+        </div>
+
+        <button
+          class="w-full text-sm mt-4 py-2 border border-gray-300 text-gray-900 rounded-lg flex items-center justify-center gap-2"
+        >
+          Enviar <span>→</span>
+        </button>
+      </div>
+
+      <!-- MAPA -->
+      <div
+        class="sm:w-1/2 w-full p-4 h-[450px] rounded-lg flex items-center justify-center bg-white"
+      >
+        <MapBox client:only="react" />
+      </div>
+    </form>
+  </section>
+</Layout>

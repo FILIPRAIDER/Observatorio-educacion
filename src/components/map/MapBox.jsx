@@ -5,7 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 mapboxgl.accessToken =
   "pk.eyJ1Ijoia2V2aW5tb3JlbG8xMyIsImEiOiJjbTd4a2x1MGwwMDM4MmlwdHMwZTJzZmE1In0.asz8yGqkmezHaPIP709Yyg"; // 🔥 Reemplaza con tu token de Mapbox
 
-const Mapa = () => {
+export const MapBox = () => {
   const mapContainer = useRef(null);
 
   useEffect(() => {
@@ -30,5 +30,3 @@ const Mapa = () => {
     />
   );
 };
-
-export default Mapa;

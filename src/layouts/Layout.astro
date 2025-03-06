@@ -1,12 +1,12 @@
 ---
 // src/layouts/Layout.astro
-import Navbar from "../components/layout/Navbar.astro";
+import Navbar from "../components/ui/Navbar.astro";
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 interface Props {
   title: string;
 }
-import Footer from "../components/layout/Footer.astro";
+import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
 ---
@@ -16,6 +16,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <ClientRouter />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link
@@ -24,7 +25,6 @@ const { title } = Astro.props;
     />
 
     <title>{title} | Observatorio de la educación</title>
-    <ClientRouter />
   </head>
   <body class="bg-gray-50 relative">
     <!-- Fondo estilizado -->

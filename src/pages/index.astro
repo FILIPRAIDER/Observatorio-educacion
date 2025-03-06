@@ -1,10 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Imagen1 from "../../public/assets/ImagenHome.jpg";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Inicio">
-  <h1>Hola</h1>
+    <section class="p-20">
+      <div class="flex flex-row items-center justify-center">
+        <div class="flex flex-col items-center justify-center w-1/2">
+          <div>
+            <h1 class="text-6xl font-bold">Bienvenidos al Observatorio de la Educación</h1>
+            <p>Explora una plataforma dedicada al análisis y la investigación del sector educativo, diseñada para inspirar y educar.</p>
+          </div>
+          <div class="flex flex-row items-center justify-center gap-4">
+            <div class="flex flex-col items-center gap-2">
+              <h6>+200</h6>
+              <span>Investigaciones</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <h6>+200</h6>
+              <span>Publicaciones</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <h6>+200</h6>
+              <span>Investigadores</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col items-center justify-center w-1/2">
+          <iframe src="{Imagen1}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
 </Layout>

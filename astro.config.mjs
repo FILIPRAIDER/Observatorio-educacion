@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 
 export default defineConfig({
   prefetch: {
@@ -9,6 +10,7 @@ export default defineConfig({
   prefetch: true,
   site: "https://observatorio-educacion.vercel.app",
   integrations: [
+    react(),
     tailwind({
       config: { path: './tailwind.config.cjs' }
     }),

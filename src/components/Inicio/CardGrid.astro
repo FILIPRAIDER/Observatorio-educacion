@@ -1,0 +1,57 @@
+---
+interface CardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+const cards: CardProps[] = [
+  {
+    icon: "../assets/icons/icon1.svg",
+    title: "Investigación educativa",
+    description:
+      "Exploramos tendencias educativas a través de datos precisos y actualizados",
+  },
+  {
+    icon: "../assets/icons/icon2.svg",
+    title: "Análisis y tratamiento de datos",
+    description:
+      "Realizamos estudios profundos sobre métodos y políticas educativas.",
+  },
+  {
+    icon: "../assets/icons/icon3.svg",
+    title: "Artículos científicos y de opinión",
+    description:
+      "Ofrecemos herramientas y materiales para educadores innovadores",
+  },
+  {
+    icon: "../assets/icons/icon4.svg",
+    title: "Boletines y podcast",
+    description:
+      "Analizamos y proponemos mejoras en las políticas del sector educativo",
+  },
+  {
+    icon: "../assets/icons/icon5.svg",
+    title: "Eventos, acompañamiento curricular y articulación",
+    description:
+      "Exploramos el impacto de la tecnología en los procesos de aprendizaje",
+  },
+];
+---
+
+<div class="flex justify-center items-center mt-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl p-10">
+    {
+      cards.map((card) => (
+        <div class="p-6 bg-white rounded-xl shadow-md text-center border border-gray-200 hover:shadow-lg transition-all">
+          <img
+            src={card.icon}
+            alt="Icono"
+            class="w-10 h-10 p-2 mx-auto mb-3 bg-[#e5f3ff] rounded-full"
+          />
+          <h3 class="text-lg font-bold mb-4 ">{card.title}</h3>
+          <p class="text-gray-600 text-sm">{card.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

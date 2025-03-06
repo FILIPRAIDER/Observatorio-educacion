@@ -1,51 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-
+import SectionCard from "../components/Inicio/SectionCard.astro";
 ---
 
 <Layout title="Inicio">
-
-  <section class="px-20 py-10 font-poppins">
+  <section class="px-4 sm:px-20 py-10 font-poppins">
     <div class="flex flex-row items-start justify-start gap-10">
       <div class="flex flex-col items-start w-full md:w-1/2">
-        <h1 class="text-6xl font-semibold pb-4">Bienvenidos al Observatorio de la Educación</h1>
-        <p class="text-gray-600 text-sm max-w-2xl">
-          En el Observatorio de la Educación recopilamos, analizamos y transformamos datos en conocimiento. 
-          A través de investigaciones basadas en dataset educativos y visualizaciones en Power BI, 
-          generamos información clave para mejorar la educación en Córdoba.
+        <h1 class="text-4xl sm:text-6xl font-semibold pb-4">
+          Bienvenidos al Observatorio de la Educación
+        </h1>
+        <p class="text-gray-600 text-xs sm:text-sm max-w-2xl text-wrap">
+          En el Observatorio de la Educación recopilamos, analizamos y
+          transformamos datos en conocimiento. A través de investigaciones
+          basadas en dataset educativos y visualizaciones en Power BI, generamos
+          información clave para mejorar la educación en Córdoba.
         </p>
-        <div class="flex flex-row items-center justify-start gap-8 mt-10">
+        <div class="flex flex-col items-start w-full md:w-1/2">
+          <img
+            src="/assets/ImagenHome.jpg"
+            class="w-full h-auto rounded-lg mt-4"
+            alt="Observatorio de la Educación"
+          />
+        </div>
+        <div
+          class="flex flex-row items-center justify-center text-center gap-4 mt-10"
+        >
           <div class="flex flex-col items-center gap-1">
-            <h6 class="text-2xl font-bold">+200</h6>
-            <span class="text-gray-600">Investigaciones</span>
+            <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+            <span class="text-gray-600 text-sm">Investigaciones</span>
           </div>
           <div class="w-px h-10 bg-gray-300"></div>
           <div class="flex flex-col items-center gap-1">
-            <h6 class="text-2xl font-bold">+200</h6>
-            <span class="text-gray-600">Publicaciones</span>
+            <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+            <span class="text-gray-600 text-sm">Publicaciones</span>
           </div>
           <div class="w-px h-10 bg-gray-300"></div>
           <div class="flex flex-col items-center gap-1">
-            <h6 class="text-2xl font-bold">+200</h6>
-            <span class="text-gray-600">Investigadores</span>
+            <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+            <span class="text-gray-600 text-sm">Investigadores</span>
           </div>
         </div>
       </div>
-      
-      <div class="flex flex-col items-start w-full md:w-1/2">
-        <img src="/assets/ImagenHome.jpg"  class="w-full h-auto" alt="Observatorio de la Educación">
-      </div>
     </div>
-  </section>
-  
 
-  <section class="px-20 py-10">
-    <div>
-      <h1 class="text-4xl font-medium pb-4">Publicaciones Destacadas</h1>
-        <p class="text-gray-600 text-sm max-w-2xl">
-          Conoce los estudios y análisis más relevantes sobre educación en Córdoba. Investigaciones basadas en datos que buscan generar impacto y mejorar la calidad educativa.
+    <section class="px-4 sm:px-20 py-10 pl-0">
+      <div>
+        <h1 class="text-4xl font-medium pb-4">Publicaciones Destacadas</h1>
+        <p class="text-gray-600 text-xs max-w-xl">
+          Conoce los estudios y análisis más relevantes sobre educación en
+          Córdoba. Investigaciones basadas en datos que buscan generar impacto y
+          mejorar la calidad educativa.
         </p>
-    </div>
+      </div>
+    </section>
+
+    <SectionCard />
   </section>
 </Layout>

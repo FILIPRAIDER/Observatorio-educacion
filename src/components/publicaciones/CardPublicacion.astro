@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 interface Props {
   titulo: string;
   fecha: string;
@@ -33,14 +31,13 @@ const fechaFormateada = new Date(fecha).toLocaleDateString("es-ES", {
     class="w-full md:w-[240px] flex-shrink-0 rounded-[8px] md:absolute md:-left-10 -mt-24 md:mt-0"
   >
     <a href={`/publicaciones/${slug}`} data-astro-prefetch>
-      <Image
+      <img
         width={240}
         height={152}
         src={imagen}
         alt={`Imagen para ${titulo}`}
-        class="object-cover bg-gray-200 md:mt-0 rounded-[8px] mx-auto mb-2 w-[300px] md:w-[240px] h-[180px] md:h-[152px] transition-all duration-300 ease-in-out"
-        astro-view-transition={`${slug}-image`}
-        transition:animate="fade"
+        class="object-cover bg-gray-200 md:mt-0 rounded-[8px] mx-auto mb-2 w-[300px] md:w-[240px] h-[180px] md:h-[152px]"
+        transition:name={`${slug}-image`}
       />
     </a>
   </div>

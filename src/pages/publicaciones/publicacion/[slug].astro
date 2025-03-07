@@ -1,6 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { publicaciones } from "../../data/publicaciones";
+import Layout from "../../../layouts/Layout.astro";
+import { publicaciones } from "../../../data/publicaciones";
+import { Image } from "astro:assets";
 
 export function getStaticPaths() {
   return publicaciones.map((publicacion) => ({

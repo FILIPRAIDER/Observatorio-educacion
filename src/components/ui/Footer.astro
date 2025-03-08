@@ -1,6 +1,39 @@
-<footer class="bg-gray-100 py-6 mt-12">
+---
+import logo from "/public/Logo.svg";
+import { Image } from "astro:assets";
+---
+
+<footer class="bg-gray-100 py-6 mt-12 font-poppins">
   <div class="container mx-auto px-4 text-center text-gray-600">
-    &copy; {new Date().getFullYear()} Observatorio de la educación. Todos los derechos
-    reservados.
+    <div
+      class="flex items-start md:items-center justify-around gap-10 md:gap-20 flex-col md:flex-row"
+    >
+      <div class="flex flex-col items-start gap-4 mb-4">
+        <a href="/">
+          <Image
+            width={45}
+            height={45}
+            src={logo}
+            alt="Observatorio de la educación "
+            class="h-[35px] md:h-[50px] w-auto md:block hidden"
+          />
+          <p class="text-lg font-bold text-black md:hidden block">
+            Observatorio de la Educación
+          </p>
+        </a>
+        <p class="text-xs hidden md:block">
+          &copy; {new Date().getFullYear()} Observatorio de la educación. Todos los
+          derechos reservados.
+        </p>
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <h4 class="font-semibold text-black">Contacto</h4>
+        <p>contact@observatorio.com</p>
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <h1 class="font-semibold text-black">Ubicación</h1>
+        <p>Calle 52A No. 6-79, La Castellana</p>
+      </div>
+    </div>
   </div>
 </footer>

@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const classTitulo = "text-4xl font-semibold pb-4 text-black ";
+const classSub = "text-gray-600 text-xs max-w-xl leading-relaxed";
+const classTituloPrincipal = "text-4xl md:text-5xl font-bold text-center pb-4";
+const classSubPrincipal =
+  "text-gray-600 text-center text-[10px] md:text-sm mb-6";
+import Datos from "../../components/datos/powerbi.astro";
+---
+
+<Layout title="Cordoba en Datos">
+  <section class="md:px-20 px-4 py-10">
+    <h1 class={classTituloPrincipal}>Observatorio de la educación</h1>
+    <div class="flex flex-col items-center justify-center">
+      <p
+        className={classSubPrincipal +
+          " border border-gray-300 rounded-lg w-fit px-2 py-1 "}
+      >
+        Explore <strong> datos y cifras </strong> desde la primera infancia hasta
+        la educación superior
+      </p>
+    </div>
+    <Datos />
+  </section>
+</Layout>

@@ -1,0 +1,44 @@
+---
+const equipo = [
+  {
+    nombre: "Luis Fernando Alfonso Garzón",
+    cargo: "Decano (E)",
+    img: "/assets/investigadores/1.svg",
+  },
+  {
+    nombre: "Luis Genaro Pérez González",
+    cargo: "Profesor",
+    img: "/assets/investigadores/2.svg",
+  },
+  {
+    nombre: "Aura Esther Castillo Lozano",
+    cargo: "Subdirectora",
+    img: "/assets/investigadores/3.svg",
+  },
+  {
+    nombre: "Juan David Osorio Bustamante",
+    cargo: "Coordinador",
+    img: "/assets/investigadores/4.svg",
+  },
+];
+---
+
+<section class="w-full">
+  <div class="flex flex-col justify-center items-center md:flex-row gap-10 p-6">
+    {
+      equipo.map((persona) => (
+        <div class="relative w-full h-64 rounded-lg overflow-hidden">
+          <img
+            src={persona.img}
+            alt={persona.nombre}
+            class="w-full h-full object-fill"
+          />
+          <div class="absolute bottom-0 backdrop-blur-sm left-0 w-full bg-black bg-opacity-30 text-white p-3 text-center">
+            <h2 class="font-medium text-sm ">{persona.nombre}</h2>
+            <p class="text-xs">{persona.cargo}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

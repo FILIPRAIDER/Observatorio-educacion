@@ -1,0 +1,45 @@
+---
+const menuItems = [
+  { label: "Datos y cifras del sector", description: "" },
+  { label: "Estadísticas", description: "Ver estadísticas de Córdoba." },
+  { label: "Reportes", description: "Ver reportes disponibles." },
+  { label: "Tendencias", description: "Datos de tendencias recientes." },
+  { label: "Comparaciones", description: "Comparar datos históricos." },
+];
+---
+
+<!-- Versión móvil: Select -->
+<div class="md:hidden w-full p-4 bg-white shadow-sm">
+  <select id="menuSelect" class="w-full p-2 border rounded">
+    <option selected disabled>Selecciona una opción</option>
+    {menuItems.map((item) => <option value={item.label}>{item.label}</option>)}
+  </select>
+</div>
+
+<!-- Versión escritorio: Sidebar -->
+<div
+  class="hidden md:block w-64 h-screen overflow-y-auto bg-white rounded-lg p-4 m-2 shadow-sm"
+>
+  <h2 class="text-lg font-semibold mb-4">Córdoba</h2>
+  <ul>
+    {
+      menuItems.map((item) => (
+        <li class="py-2 border-b">
+          <h3 class="text-sm font-bold">{item.label}</h3>
+          {item.description && (
+            <p class="text-xs text-gray-500">{item.description}</p>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuSelect = document.getElementById("menuSelect");
+    menuSelect.addEventListener("change", (event) => {
+      //cambiar contenido del powerbi
+    });
+  });
+</script>

@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionCard from "../components/Inicio/SectionCard.astro";
+const classTitulo = "text-4xl font-semibold pb-4 text-black ";
+const classSub = "text-gray-600 text-xs max-w-xl leading-relaxed";
+import Investigadores from "../components/Inicio/Investigadores/Investigadores.astro";
 ---
 
 <Layout title="Inicio">
@@ -73,7 +76,7 @@ import SectionCard from "../components/Inicio/SectionCard.astro";
           <h1 class={classTitulo}>¿Quiénes Somos?</h1>
           <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
             <img
-              src="/assets/qsomos.jpg"
+              src="/assets/ImagenHome.jpg"
               alt="Personas conversando"
               class="w-full md:w-[400px] h-auto rounded-lg shadow-md block md:hidden mb-4"
             />
@@ -93,7 +96,7 @@ import SectionCard from "../components/Inicio/SectionCard.astro";
         </div>
         <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
           <img
-            src="/assets/qsomos.jpg"
+            src="/assets/ImagenHome.jpg"
             alt="Personas conversando"
             class="w-full md:w-[400px] h-auto rounded-lg shadow-md hidden md:block"
           />
@@ -119,7 +122,7 @@ import SectionCard from "../components/Inicio/SectionCard.astro";
           />
           <div class="w-px h-10 bg-gray-300"></div>
           <img
-            src="/assets/organizaciones/gober.png"
+            src="/assets/organizaciones/gobernacion.png"
             alt="Organización"
             class="w-16 h-auto md:w-24 md:h-auto"
           />

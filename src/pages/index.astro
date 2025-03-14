@@ -1,11 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionCard from "../components/Inicio/SectionCard.astro";
+const classTitulo = "text-4xl font-semibold pb-4 text-black ";
+const classSub = "text-gray-600 text-xs max-w-xl leading-relaxed";
+import Investigadores from "../components/Inicio/Investigadores/Investigadores.astro";
 ---
 
 <Layout title="Inicio">
-  <section class="px-4 sm:px-20 py-10">
-    <div class="flex flex-row items-start justify-start gap-10 mb-20">
+  <section class="px-4 md:px-20 py-10 gap-10">
+    <div
+      class="flex flex-col md:flex-row items-start justify-start gap-6 mb-20"
+    >
       <div
         class="flex flex-col md:flex-row items-start w-full justify-between gap-4"
       >
@@ -13,46 +18,40 @@ import SectionCard from "../components/Inicio/SectionCard.astro";
           <h1 class="text-4xl sm:text-6xl font-semibold pb-4">
             Bienvenidos al Observatorio de la Educación
           </h1>
-          <p
-            class="text-gray-600 text-xs sm:text-sm max-w-2xl text-wrap md:mt-4"
-          >
-            En el Observatorio de la Educación recopilamos, analizamos y
-            transformamos datos en conocimiento. A través de investigaciones
-            basadas en dataset educativos y visualizaciones en Power BI,
-            generamos información clave para mejorar la educación en Córdoba.
+          <p class="text-gray-600 text-xs sm:text-sm max-w-2xl md:mt-4">
+            Explora una plataforma dedicada al análisis y la investigación del
+            sector educativo, diseñada para inspirar y educar.
           </p>
-          <div
-            class="flex flex-col items-center justify-center text-center gap-4"
-          >
+          <div class="flex flex-col items-center text-center gap-4">
             <img
               src="/assets/ImagenHome.jpg"
-              class="block md:hidden w-full h-auto rounded-lg mt-4"
-              alt="Observatorio de la Educación Mobile"
+              class="w-full h-auto rounded-lg mt-4 sm:hidden"
+              alt="Observatorio de la Educación"
             />
             <div
               class="flex flex-row items-center justify-center gap-4 md:mt-12"
             >
-              <div class="flex flex-col items-center gap-1">
-                <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+              <div class="flex flex-col items-center">
+                <h6 class="text-lg sm:text-2xl font-bold">+200</h6>
                 <span class="text-gray-600 text-sm">Investigaciones</span>
               </div>
               <div class="w-px h-10 bg-gray-300"></div>
-              <div class="flex flex-col items-center gap-1">
-                <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+              <div class="flex flex-col items-center">
+                <h6 class="text-lg sm:text-2xl font-bold">+200</h6>
                 <span class="text-gray-600 text-sm">Publicaciones</span>
               </div>
               <div class="w-px h-10 bg-gray-300"></div>
-              <div class="flex flex-col items-center gap-1">
-                <h6 class="text-md sm:text-2xl font-bold">+200</h6>
+              <div class="flex flex-col items-center">
+                <h6 class="text-lg sm:text-2xl font-bold">+200</h6>
                 <span class="text-gray-600 text-sm">Investigadores</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="flex flex-col w-full h-auto md:w-1/2 hidden md:block">
+        <div class="w-full md:w-1/2 hidden sm:block">
           <img
             src="/assets/ImagenHome.jpg"
-            class="md:w-5/6 md:h-auto rounded-lg mt-4 md:ml-4"
+            class="md:w-5/6 h-auto rounded-lg mt-4 md:ml-4"
             alt="Observatorio de la Educación"
           />
         </div>
@@ -71,5 +70,70 @@ import SectionCard from "../components/Inicio/SectionCard.astro";
     </section>
 
     <SectionCard />
+    <section class="sm:px-0 py-10">
+      <div class="relative flex flex-col md:flex-row items-center w-full">
+        <div class="w-full">
+          <h1 class={classTitulo}>¿Quiénes Somos?</h1>
+          <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+            <img
+              src="/assets/ImagenHome.jpg"
+              alt="Personas conversando"
+              class="w-full md:w-[400px] h-auto rounded-lg shadow-md block md:hidden mb-4"
+            />
+          </div>
+          <p class={classSub}>
+            El Observatorio de la Educación en Córdoba, es un espacio de
+            análisis, interpretación, reflexión y articulación sobre los
+            principales indicadores y políticas públicas del sistema educativo
+            en el departamento. Desde el observatorio también se consolida
+            información sobre temas de interés como la Cobertura en educación
+            preescolar, básica y superior; deserción, empleabilidad y resultados
+            de Pruebas Saber 11 y Saber Pro en Córdoba, con esta información se
+            desarrollan estudios y proyectos de investigación para generar
+            productos que orienten la toma de decisiones en cuanto a las
+            políticas públicas educativas.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+          <img
+            src="/assets/ImagenHome.jpg"
+            alt="Personas conversando"
+            class="w-full md:w-[400px] h-auto rounded-lg shadow-md hidden md:block"
+          />
+        </div>
+      </div>
+    </section>
+    <Investigadores />
+    <section>
+      <div class="flex flex-col items-center justify-center gap-4 mt-10">
+        <h1 class="text-4xl font-semibold pb-4 text-black text-center">
+          Organizaciones Aliadas
+        </h1>
+        <p class="text-gray-600 text-xs max-w-xl leading-snug text-center">
+          Colaboramos con instituciones académicas, entidades gubernamentales y
+          organizaciones privadas para generar estudios y propuestas que
+          fortalezcan la educación en Córdoba.
+        </p>
+        <div class="flex flex-row items-center justify-center gap-10 mt-4">
+          <img
+            src="/assets/organizaciones/ademacor.svg"
+            alt="Organización"
+            class="w-16 h-auto md:w-20 md:h-auto"
+          />
+          <div class="w-px h-10 bg-gray-300"></div>
+          <img
+            src="/assets/organizaciones/gobernacion.png"
+            alt="Organización"
+            class="w-16 h-auto md:w-24 md:h-auto"
+          />
+          <div class="w-px h-10 bg-gray-300"></div>
+          <img
+            src="/assets/organizaciones/alcaldia.png"
+            alt="Organización"
+            class="w-16 h-auto md:w-28 md:h-auto"
+          />
+        </div>
+      </div>
+    </section>
   </section>
 </Layout>

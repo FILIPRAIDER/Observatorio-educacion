@@ -1,0 +1,88 @@
+---
+import { IconCircleCheckFilled, IconSquareCheckFilled } from "@tabler/icons-react";
+interface Props {
+  icon: string;
+  title: string;
+  description: string[];
+}
+
+const cards: Props[] = [
+  {
+    icon: "../assets/icons/service1.svg",
+    title: "Estudios",
+    description: [
+      "Estudios sobre cobertura educativa.",
+      "Tasas de deserción escolar.",
+      "Resultados de pruebas Saber.",
+      "Empleabilidad de egresados.",
+      "Vocación educativa territorial.",
+      "Oferta académica vs necesidades.",
+    ],
+  },
+  {
+    icon: "../assets/icons/service2.svg",
+    title: "Consultorías",
+    description: [
+      "Trayectorias educativas.",
+      "Evaluación de resultados.",
+      "Impacto de políticas educativas.",
+      "Planes de formación docente.",
+    ],
+  },
+  {
+    icon: "../assets/icons/service3.svg",
+    title: "Proyectos de investigación",
+    description: [
+      "Investigación sobre calidad educativa.",
+      "Insumos para políticas públicas.",
+      "Apoyo al aseguramiento de calidad.",
+    ],
+  },
+  {
+    icon: "../assets/icons/service4.svg",
+    title: "Acompañamientos curriculares",
+    description: [
+      "Revisión de proyectos educativos.",
+      "Currículos integradores.",
+      "Aplicación del enfoque STEAM.",
+      "Mejora de calidad educativa.",
+    ],
+  },
+  {
+    icon: "../assets/icons/service5.svg",
+    title: "Cursos, seminarios y diplomados",
+    description: [
+      "Programas para formación docente.",
+      "Tendencias educativas actuales.",
+      "Convivencia escolar.",
+      "Rol del docente como mediador.",
+    ],
+  },
+];
+
+---
+
+<div class="flex justify-center items-center mt-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl">
+    {
+      cards.map((card) => (
+        <div class="p-6 bg-white rounded-xl shadow-md text-center border border-gray-200 hover:shadow-lg transition-all">
+          <img
+            src={card.icon}
+            alt="Icono"
+            class="w-10 h-10 p-2 mx-auto mb-3 bg-[#b3e7d3] rounded-full"
+          />
+          <h3 class="text-lg font-bold mb-4 ">{card.title}</h3>
+          <ul class="text-gray-600 text-sm text-left space-y-2">
+            {card.description.map((item) => (
+              <li class="flex items-start gap-2">
+                <IconCircleCheckFilled className="w-4 h-4 text-[#16594b] inline-block mr-2" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</div>

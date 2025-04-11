@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/servicios/cards.astro"
+const classTituloPrincipal = "text-3xl md:text-5xl font-bold text-center pb-4";
+const classSubPrincipal =
+  "text-gray-600 text-center text-[12px] md:text-sm mb-6";
+---
+
+<Layout title="Servicios Observatorio de educación">
+<main class="container mx-auto px-4 py-16 font-poppins flex flex-col gap-2 items-center" >
+    <h1 class={classTituloPrincipal}>Nuestros Servicios para el Fortalecimiento Educativo</h1>
+    <h3 class={classSubPrincipal}>Desde el Observatorio de Educación ofrecemos servicios que fortalecen la toma de decisiones, mejoran la calidad educativa y promueven la formación continua, con un enfoque basado en evidencia e innovación.</h3>
+    <button id="btnModal" class="py-2 px-4 bg-[#16594b] text-white rounded-lg hover:bg-[#1c7f67]  transition md:w-[500px]">Estoy interesado en un servicio
+</button>
+
+<!-- Modal -->
+<dialog id="dialog" class="rounded-xl p-0 w-full max-w-md backdrop:bg-black/50">
+  <form method="dialog" class="bg-white p-6 rounded-xl shadow-xl relative">
+    <!-- Título -->
+    <h1 class="text-xl font-semibold text-gray-800 mb-2">Formulario de contacto</h1>
+    <p class="text-gray-600 mb-4">Déjanos tus datos y te contactaremos.</p>
+
+    <!-- Campos -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm text-gray-700 mb-1" for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200" required />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1" for="correo">Correo</label>
+        <input id="correo" name="correo" type="email" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200" required />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1" for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200" required />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700 mb-1" for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="3" class="w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200" required></textarea>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="mt-6 flex justify-end gap-2">
+      <button id="btnCerrar" type="button" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200">
+        Cancelar
+      </button>
+      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        Enviar
+      </button>
+    </div>
+  </form>
+</dialog>
+    <Card
+      icon=""
+      title=""
+      description={[""]}
+    />
+</main>
+
+</Layout>
+
+<script>
+  const btnModal = document.getElementById("btnModal");
+  const dialog = document.getElementById("dialog") as HTMLDialogElement;
+  const btnCerrar = document.getElementById("btnCerrar");
+
+  btnModal?.addEventListener("click", () => {
+    dialog?.showModal();
+  });
+  btnCerrar?.addEventListener("click", () => {
+    dialog?.close();
+  });
+</script>

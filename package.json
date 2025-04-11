@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.2.1",
     "@fontsource/inter": "^5.2.5",
     "@heroicons/react": "^2.2.0",
+    "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.2",
     "astro-icon": "^1.1.5",
